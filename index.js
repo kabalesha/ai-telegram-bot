@@ -1,8 +1,9 @@
 import { Telegraf, Markup } from "telegraf";
 import dotenv from "dotenv";
+import mongoose from "mongoose";
 
 dotenv.config();
-
+mongoose.connect(process.env.MONGO_URL);
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
 // 📦 fake DB (in-memory)
